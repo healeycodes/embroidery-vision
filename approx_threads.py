@@ -87,7 +87,7 @@ def get_largest_circle(file_path, debug=False):
     largest_circle = circles.pop()
 
     if debug:
-        save_debug_circles(original_image, filtered_image, circles, largest_circle)
+        save_debug_circles(original_image.copy(), filtered_image, circles, largest_circle)
     
     return largest_circle, original_image
 
@@ -110,15 +110,13 @@ def generate_palette(circle_image, original_image, debug=False):
         return rgb_to_dmc(r, g, b)
 
     c = Counter()
-    total = 0
     for _, color in enumerate(intensity_values_from_original):
-        total += 1
         c[
             # don't forget bgr -> rgb
             cached_rgb_to_dmc(color[2], color[1], color[0])['index']
         ] += 1
  
-    with_percentage = [(i, c[i] / total * 100.0) for i, _ in c.most_common()]
+    with_percentage = [(i, c[i] / len(intensity_values_from_original) * 100.0) for i, _ in c.most_common()]
 
     limit_low_occuring_threads = 3 # %
     filtered = [color for color in with_percentage if color[1] > limit_low_occuring_threads]
@@ -127,16 +125,17 @@ def generate_palette(circle_image, original_image, debug=False):
             for color in filtered]
 
     if debug:
-        cv2.circle(reduced_color_image, (x, y), r, (0, 255, 0), 2)
-        _, w, _ = reduced_color_image.shape
-        size = int(w / len(filtered))
-        y = size
-        x = 0
-        for idx, color in enumerate(filtered):
-            b, g, r = dmc_colors[color[0]]['blue'], dmc_colors[color[0]]['green'], dmc_colors[color[0]]['red']
-            cv2.rectangle(reduced_color_image, (size * idx, 0), ((size * idx) + size, size), (b, g, r), -1)
-            cv2.putText(reduced_color_image, dmc_colors[color[0]]['floss'], (size * idx, size-7), cv2.FONT_HERSHEY_SIMPLEX, 0.5, (255-b, 255-g, 255-r), 1)
-        cv2.imwrite('debug_circles.jpg', reduced_color_image)
+        cv2.circle(original_image, (x, y), r, (0, 255, 0), 2)
+
+    _, w, _ = original_image.shape
+    size = int(w / len(filtered))
+    y = size
+    x = 0
+    for idx, color in enumerate(filtered):
+        b, g, r = dmc_colors[color[0]]['blue'], dmc_colors[color[0]]['green'], dmc_colors[color[0]]['red']
+        cv2.rectangle(original_image, (size * idx, 0), ((size * idx) + size, size), (b, g, r), -1)
+        cv2.putText(original_image, dmc_colors[color[0]]['floss'], (size * idx, size-7), cv2.FONT_HERSHEY_SIMPLEX, 0.5, (255-b, 255-g, 255-r), 1)
+    cv2.imwrite('out.jpg', original_image)
 
     return with_dmc
 
