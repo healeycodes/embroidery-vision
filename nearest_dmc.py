@@ -10,7 +10,7 @@ with open(DMC_CSV, newline='') as csvfile:
     for index, row in enumerate(reader):
         dmc_colors.append({
             'index': index,
-            'floss': row['floss#'],
+            'floss': '#' + row['floss#'],
             'description': row['description'],
             'red': int(row['red']),
             'green': int(row['green']),
