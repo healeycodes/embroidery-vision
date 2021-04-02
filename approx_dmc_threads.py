@@ -126,7 +126,7 @@ def quantize_image(image, div=64):
     quantized = image // div * div + div // 2
     return quantized
 
-def generate_palette(circle_image, original_image, output_file=False, debug=False):
+def generate_palette(circle_image, original_image, output_file=False):
     '''
     Generate a color palette of DMC threads for a circle mask and image.
     Overlay a palette graphic on the image and return a breakdown of the
@@ -169,10 +169,10 @@ def generate_palette(circle_image, original_image, output_file=False, debug=Fals
     x = 0
     for idx, color in enumerate(filtered):
         b, g, r = dmc_colors[color[0]]['blue'], dmc_colors[color[0]]['green'], dmc_colors[color[0]]['red']
-        cv2.rectangle(reduced_color_image, (size * idx, 0), ((size * idx) + size, size), (b, g, r), -1)
-        cv2.putText(reduced_color_image, dmc_colors[color[0]]['floss'], (size * idx, size-7), cv2.FONT_HERSHEY_SIMPLEX, 0.5, (255-b, 255-g, 255-r), 1)
+        cv2.rectangle(original_image, (size * idx, 0), ((size * idx) + size, size), (b, g, r), -1)
+        cv2.putText(original_image, dmc_colors[color[0]]['floss'], (size * idx, size-7), cv2.FONT_HERSHEY_SIMPLEX, 0.5, (255-b, 255-g, 255-r), 1)
 
     if output_file:
-        cv2.imwrite(output_file, reduced_color_image)
+        cv2.imwrite(output_file, original_image)
 
     return '\n'.join(with_dmc)

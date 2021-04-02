@@ -9,6 +9,6 @@ parser.add_argument('--debug', action='store_true', help='set debug mode. Saves 
 args = parser.parse_args()
 
 circle_image, original_image = get_largest_circle(args.input, debug=args.debug)
-thread_palette = generate_palette(circle_image, original_image, output_file=args.output, debug=args.debug)
+thread_palette = generate_palette(circle_image, original_image, output_file=args.output)
 
 print(thread_palette)
