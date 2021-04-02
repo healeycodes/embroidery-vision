@@ -1,4 +1,4 @@
-![End to end image tests](https://github.com/healeycodes/andoma/workflows/End%20to%20end%20image%20tests/badge.svg)
+[![End to end image tests](https://github.com/healeycodes/embroidery-vision/actions/workflows/python-app.yml/badge.svg?branch=main)](https://github.com/healeycodes/embroidery-vision/actions/workflows/python-app.yml)
 
 # embroidery-vision
 
