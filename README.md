@@ -3,3 +3,6 @@
 # embroidery-vision
 
 Python 3.8
+
+<img src="https://github.com/healeycodes/embroidery-vision/blob/main/examples/example_out.jpg" height="400">
+<img src="https://github.com/healeycodes/embroidery-vision/blob/main/examples/example_destructive_filters.jpg">
