@@ -1,4 +1,5 @@
 opencv-python==4.5.1.48
 scikit-image==0.18.1
+scikit-learn==0.24.1
 scipy==1.6.2
 numpy==1.20.1
