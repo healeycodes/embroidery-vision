@@ -1,5 +1,5 @@
-# approximate-threads
+![End to end image tests](https://github.com/healeycodes/andoma/workflows/End%20to%20end%20image%20tests/badge.svg)
 
-Work in progress!
+# embroidery-vision
 
-`python palette.py comp.jpg`
+Python 3.8
