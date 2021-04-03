@@ -39,7 +39,7 @@ optional arguments:
 
 ## Limitations
 
-This program doesn't take lighting conditions into account and doesn't filter out the base material (it thinks it's another thread) so the accuracy is low.
+This program doesn't take lighting conditions into account and doesn't filter out the base material (it thinks the background is another thread) so the accuracy is low.
 
 ## Tests
 
