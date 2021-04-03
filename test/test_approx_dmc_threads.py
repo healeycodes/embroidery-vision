@@ -14,6 +14,8 @@ class TestApproxThreads(unittest.TestCase):
 
         computer = "test/computer.jpg"
         circle_image, original_image = get_largest_circle(computer, debug=False)
-        thread_palette = generate_palette(circle_image, original_image)
+        thread_palette = generate_palette(
+            circle_image, original_image, output_file=False
+        )
 
         self.assertIn("#156 Blue Violet Med Lt", thread_palette)
