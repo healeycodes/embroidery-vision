@@ -10,9 +10,9 @@ OpenCV is used to locate the hoop area then the color space is reduced and match
 
 In order to find the hoop area, a series of destructive filters are used — the image is converted to gray and then the following are applied: `GaussianBlur`, `medianBlur`, `adaptiveThreshold`, `erode`, `dilate`. As we see below, this makes the hoop more identifiable to the circle Hough transform.
 
-Usually, multiple circles are found but the largest and most central one is chosen. This logic was chosen after reviewing ~100 of the latest posts to r/embroidery.
-
 <img src="https://github.com/healeycodes/embroidery-vision/blob/main/examples/example_destructive_filters.jpg">
+
+Usually, multiple circles are found but the largest and most central one is chosen. This logic was chosen after reviewing ~100 of the latest posts to r/embroidery.
 
 To find the colors, the area is quantized and then the nearest color is looked up in a cached k-d tree of DMC colors. The lower occuring colors are filtered out from the palette.
 
