@@ -1,6 +1,8 @@
 [![End to end image tests](https://github.com/healeycodes/embroidery-vision/actions/workflows/python-app.yml/badge.svg?branch=main)](https://github.com/healeycodes/embroidery-vision/actions/workflows/python-app.yml)
 
-# embroidery-vision
+# 🧵 embroidery-vision
+
+> My blog post: [Computer Vision and Embroidery](https://healeycodes.com/computer-vision-and-embroidery/)
 
 A CLI for finding the approximate embroidery floss colours from an image of an embroidery hoop.
 
