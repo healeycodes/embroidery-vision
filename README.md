@@ -4,6 +4,8 @@
 
 > My blog post: [Computer Vision and Embroidery](https://healeycodes.com/computer-vision-and-embroidery/)
 
+<br>
+
 A CLI for finding the approximate embroidery floss colours from an image of an embroidery hoop.
 
 OpenCV is used to locate the hoop area then the color space is reduced and matched to the limited set of DMC colors (see `dmc.csv`). A color palette is generated with the DMC identification number attached to each color.
