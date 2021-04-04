@@ -198,7 +198,6 @@ def generate_palette(circle_image, original_image, output_file=False):
     _, w, _ = original_image.shape
     size = int(w / len(filtered))
     y = size
-    x = 0
     for idx, color in enumerate(filtered):
         b, g, r = (
             dmc_colors[color[0]]["blue"],
