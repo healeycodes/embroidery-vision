@@ -26,6 +26,8 @@ Tested with Python 3.8.
 
 `pip install -r requirements.txt`
 
+`pip install -r requirements-dev.txt`
+
 ```
 $ python cli.py  -h
 usage: cli.py [-h] [--output file.jpg] [--debug] file.jpg
@@ -48,6 +50,8 @@ This program doesn't take lighting conditions into account and doesn't filter ou
 ## Tests
 
 `python -m unittest discover test/`
+
+`mypy .`
 
 ## License
 
