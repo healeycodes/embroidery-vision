@@ -34,5 +34,6 @@ jobs:
         run: |
           python -m unittest discover test/
       - name: Test with mypy
+        run: |
           pip install -r requirements-dev.txt
           mypy .
