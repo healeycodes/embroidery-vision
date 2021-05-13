@@ -1,5 +1,5 @@
 import csv
-import scipy.spatial as sp
+from scipy import spatial as sp
 
 DMC_CSV = "dmc.csv"
 

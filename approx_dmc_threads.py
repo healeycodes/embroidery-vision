@@ -2,7 +2,6 @@ from collections import Counter
 from functools import lru_cache
 import cv2
 import numpy as np
-from sklearn.cluster import MiniBatchKMeans
 from nearest_dmc import rgb_to_dmc, dmc_colors
 
 MAXWIDTH, MAXHEIGHT = 400, 400
